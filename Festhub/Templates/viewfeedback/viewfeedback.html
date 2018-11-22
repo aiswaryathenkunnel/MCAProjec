@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    {% include "Header.html" %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <meta charset="UTF-8">
+    <title>View</title>
+</head>
+<body>
+{% for obj in data %}
+ <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+     <tr>  <td>Feedback id</td><td>{{ obj.id }}</td></tr>
+     <tr>  <td>Student id</td><td>{{ obj.stud_id }}</td></tr>
+     <tr>  <td>Feedback description</td><td>{{ obj.feedback_desc }}</td></tr>
+     <tr>  <td>Feedback_date</td><td>{{ obj.feedback_date }}</td></tr>
+     <tr>
+         <td>
+         <a href="{% url 'viewfeedback:verify_details' pk=obj.id %}">Verify
+         </a>
+         </td>
+     </tr>
+
+     <tr>
+         <td>
+         <a href="{% url 'viewfeedback:reject_details' pk=obj.id %}">Reject
+         </a>
+         </td>
+     </tr>
+
+      </table>
+ <br>
+ <br>
+ <br>
+
+
+
+
+
+    {% endfor %}
+<br>
+{% include "Footer.html" %}
+</body>
+</html>

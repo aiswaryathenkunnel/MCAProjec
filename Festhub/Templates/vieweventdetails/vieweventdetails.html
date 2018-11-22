@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "Header.html" %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <meta charset="UTF-8">
+    <title>View</title>
+</head>
+<body>
+{% for obj in data %}
+ <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+     <tr>  <td>Event id</td><td>{{ obj.id }}</td></tr>
+     <tr>  <td>College id</td><td>{{ obj.clg_id }}</td></tr>
+     <tr>  <td>Fest id</td><td>{{ obj.fest_id }}</td></tr>
+     <tr>  <td>Event name</td><td>{{ obj.event_name }}</td></tr>
+     <tr>  <td>Event description</td><td>{{ obj.event_desc }}</td></tr>
+     <tr>  <td>Event fees</td><td>{{ obj.event_fees }}</td></tr>
+     <tr>  <td>Participant Type</td><td>{{ obj.part_type }}</td></tr>
+     <tr>  <td>Maximum participants</td><td>{{ obj.max_part }}</td></tr>
+     <tr>  <td>Starting time</td><td>{{ obj.time_from }}</td></tr>
+     <tr>  <td>Ending time</td><td>{{ obj.time_to}}</td></tr>
+     <tr>  <td>Venue</td><td>{{ obj.venue }}</td></tr>
+     <tr>
+         <td>
+         <a href="{% url 'eventreg:EventregForm' %}">Register for events
+         </a>
+         </td>
+     </tr>
+
+      </table>
+ <br>
+ <br>
+ <br>
+
+
+
+
+
+    {% endfor %}
+<br>
+{% include "Footer.html" %}
+</body>
+</html>

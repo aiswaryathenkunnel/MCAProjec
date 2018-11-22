@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "Header.html" %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <meta charset="UTF-8">
+    <title>Complaint</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <table align="center">
+
+        <tr>
+            <td>
+                <h1>
+                    Adding Complaints
+                </h1>
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                Complaint description:
+            </td>
+            <td>
+                {{ form.comp_desc}}
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                Date:
+            </td>
+            <td>
+                {{ form.comp_date}}
+            </td>
+        </tr>
+
+        <tr align="center">
+            <td>
+                <button type="submit">Add</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+
+     <tr>
+         <td>id</td>
+         <td>Complaint description</td>
+         <td>Complaint date</td>
+     </tr>
+     {% for obj in data %}
+    <tr>
+
+        <td>{{ obj.id }}</td>
+        <td>{{ obj.comp_desc }}</td>
+        <td>{{ obj.comp_date }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+<br>
+<br>
+<br>
+{% include "Footer.html" %}
+</body>
+</html>

@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    {% include "Header.html" %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <meta charset="UTF-8">
+    <title>View</title>
+</head>
+<body>
+{% for obj in data %}
+ <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+     <tr>  <td>Coordinator id</td><td>{{ obj.id }}</td></tr>
+     <tr>  <td>Fest coordinator name</td><td>{{ obj.coord_name }}</td></tr>
+     <tr>  <td>Coordinator contact no</td><td>{{ obj.coord_contact }}</td></tr>
+     <tr>  <td>Coordinator's Email ID</td><td>{{ obj.coord_email }}</td></tr>
+     <tr>  <td>College name</td><td>{{ obj.clg_name }}</td></tr>
+     <tr>  <td>College website address</td><td>{{ obj.clg_website }}</td></tr>
+     <tr>  <td>College contact no</td><td>{{ obj.clg_contact }}</td></tr>
+     <tr>  <td>College place</td><td>{{ obj.clg_place }}</td></tr>
+     <tr>  <td>College pincode</td><td>{{ obj.clg_pincode }}</td></tr>
+     <tr>  <td>College District</td><td>{{ obj.clg_dist }}</td></tr>
+     <tr>  <td>College start date</td><td>{{ obj.clg_startdate }}</td></tr>
+     <tr>  <td>College licence no</td><td>{{ obj.clg_licenceno }}</td></tr>
+     <tr>  <td>College type</td><td>{{ obj.clg_type }}</td></tr>
+     <tr>  <td>Username</td><td>{{ obj.clg_username }}</td></tr>
+     <tr>  <td>Password</td><td>{{ obj.clg_password}}</td></tr>
+     <tr>
+         <td>
+         <a href="{% url 'viewcoorddetails:verify_details' pk=obj.id %}">Verify
+         </a>
+         </td>
+     </tr>
+
+     <tr>
+         <td>
+         <a href="{% url 'viewcoorddetails:reject_details' pk=obj.id %}">Reject
+         </a>
+         </td>
+     </tr>
+
+      </table>
+ <br>
+ <br>
+ <br>
+
+
+
+
+
+    {% endfor %}
+<br>
+{% include "Footer.html" %}
+</body>
+</html>

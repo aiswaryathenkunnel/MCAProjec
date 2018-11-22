@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "Header.html" %}
+    <meta charset="UTF-8">
+    <title>Event Details</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <table align="center">
+
+        <tr>
+            <td>
+                <h1>
+                    Adding Event Details
+                </h1>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Fest-ID:
+            </td>
+            <td>
+                {{ form.fest_id}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Event Name:
+            </td>
+            <td>
+                {{ form.event_name}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Event Description:
+            </td>
+            <td>
+                {{ form.event_desc}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Event Fees:
+            </td>
+            <td>
+                {{ form.event_fees}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Participant Type:
+            </td>
+            <td>
+                {{ form.part_type}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Maximum participants:
+            </td>
+            <td>
+                {{ form.max_part}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Time from:
+            </td>
+            <td>
+                {{ form.time_from}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Time to:
+            </td>
+            <td>
+                {{ form.time_to}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Venue:
+            </td>
+            <td>
+                {{ form.venue}}
+            </td>
+        </tr>
+
+        <tr align="center">
+            <td>
+               <input type="submit" value="sumbit" name="submit">
+            </td>
+        </tr>
+    </table>
+</form>
+<table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+
+     <tr>
+         <td>id</td>
+         <td>Fest ID</td>
+         <td>Event Name</td>
+         <td>Event description</td>
+         <td>Event fees</td>
+         <td>Participant type</td>
+         <td>Maximum Participants</td>
+         <td>Starting time</td>
+         <td>Ending time</td>
+         <td>Venue</td>
+     </tr>
+     {% for obj in data %}
+    <tr>
+        <td>{{ obj.id }}</td>
+        <td>{{ obj.fest_id}}</td>
+        <td>{{ obj.event_name }}</td>
+        <td>{{ obj.event_desc }}</td>
+        <td>{{ obj.event_fees }}</td>
+        <td>{{ obj.part_type }}</td>
+        <td>{{ obj.max_part }}</td>
+        <td>{{ obj.time_from}}</td>
+        <td>{{ obj.time_to }}</td>
+        <td>{{ obj.venue }}</td>
+    </tr>
+    <td>
+            <a href="{% url 'eventadd:edit_eventdetails' pk=obj.id %}">edit</a>
+            <a href="{% url 'eventadd:delete_eventdetails' pk=obj.id %}">delete</a>
+        </td>
+    {% endfor %}
+
+</table>
+<br>
+{% include "Footer.html" %}
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    {% include "Header.html" %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <meta charset="UTF-8">
+    <title>View</title>
+</head>
+<body>
+{% for obj in data %}
+ <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+     <tr>  <td>Student id</td><td>{{ obj.id }}</td></tr>
+     <tr>  <td>Student name</td><td>{{ obj.stud_name }}</td></tr>
+     <tr>  <td>Place</td><td>{{ obj.stud_place }}</td></tr>
+     <tr>  <td>Email ID</td><td>{{ obj.stud_email }}</td></tr>
+     <tr>  <td>Student contact no</td><td>{{ obj.stud_contact }}</td></tr>
+     <tr>  <td>Student age</td><td>{{ obj.stud_email }}</td></tr>
+     <tr>  <td>College ID</td><td>{{ obj.clg_id }}</td></tr>
+     <tr>  <td>Department ID</td><td>{{ obj.dept_id }}</td></tr>
+     <tr>  <td>Student admission no</td><td>{{ obj.stud_admno }}</td></tr>
+     <tr>  <td>Course</td><td>{{ obj.stud_course }}</td></tr>
+     <tr>  <td>Username</td><td>{{ obj.stud_username }}</td></tr>
+     <tr>  <td>Password</td><td>{{ obj.stud_password}}</td></tr>
+     <tr>
+         <td>
+         <a href="{% url 'viewstuddetails:verify_details' pk=obj.id %}">Verify
+         </a>
+         </td>
+     </tr>
+
+     <tr>
+         <td>
+         <a href="{% url 'viewstuddetails:reject_details' pk=obj.id %}">Reject
+         </a>
+         </td>
+     </tr>
+
+      </table>
+ <br>
+ <br>
+ <br>
+
+
+
+
+
+    {% endfor %}
+<br>
+{% include "Footer.html" %}
+</body>
+</html>

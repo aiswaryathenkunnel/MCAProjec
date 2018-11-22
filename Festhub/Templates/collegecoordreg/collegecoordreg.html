@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    {% include "Header.html" %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <meta charset="UTF-8">
+    <title>College Registration</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>
+                <h2>
+                    Coordinator Registration<br>
+                </h2>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Coordinator Name:
+            </td>
+            <td>
+                {{ form.coord_name}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Coordinator Contact no:
+            </td>
+            <td>
+                {{ form.coord_contactno}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Coordinator Email-ID:
+            </td>
+            <td>
+                {{ form.coord_email}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                College Name:
+            </td>
+            <td>
+                {{ form.clg_name}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                College website:
+            </td>
+            <td>
+                {{ form.clg_website}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                College Contact No:
+            </td>
+            <td>
+                {{ form.clg_contactno}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                College Place:
+            </td>
+            <td>
+                {{ form.clg_place}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Pincode:
+            </td>
+            <td>
+                {{ form.clg_pincode}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                District:
+            </td>
+            <td>
+                {{ form.clg_dist}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Start date:
+            </td>
+            <td>
+                {{ form.clg_startdate}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Licence No:
+            </td>
+            <td>
+                {{ form.clg_licenceno}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                College type:
+            </td>
+            <td>
+                {{ form.clg_type}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Username:
+            </td>
+            <td>
+                {{ form.clg_username}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                {{ form.clg_password}}
+            </td>
+        </tr>
+
+        <tr align="center">
+            <td>
+                <button type="submit">Submit</button>
+            </td>
+        </tr>
+
+    </table>
+</form>
+{% include "Footer.html" %}
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "Header.html" %}
+    <meta charset="UTF-8">
+    <title>Event Details</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <table align="center">
+        <br>
+        <br>
+        <tr>
+            <td align="center">
+                <h2>
+                    Event Registration
+                </h2>
+        </tr>
+        <br>
+        <br>
+
+
+        <tr>
+            <td>
+                Event-ID:
+            </td>
+            <td>
+                {{ form.event_id}}
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                Event registration no:
+            </td>
+            <td>
+                {{ form.event_reg_no}}
+            </td>
+        </tr>
+
+
+        <br>
+        <br>
+        <tr align="center">
+            <td>
+                <button type="submit">Register</button>
+            </td>
+        </tr>
+
+    </table>
+</form>
+<table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+
+     <tr>
+         <td>id</td>
+         <td>Event reg no</td>
+         <td>Event ID</td>
+
+     {% for obj in data %}
+    <tr>
+        <td>{{ obj.id }}</td>
+        <td>{{ obj.event_regno }}</td>
+        <td>{{ obj.event_id }}</td>
+
+        <td>
+            <a href="{% url 'eventreg:make_payment' pk=obj.id %}">Make Payment</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+    </tr>
+</table>
+
+<br>
+<br>
+{% include "Footer.html" %}
+</body>
+</html>
