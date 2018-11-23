@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <br>
+    <br>
+    {% include "Header.html" %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <table align="center">
+         <tr>
+            <td>
+                <h1>
+                    Admin Login
+                </h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Username:
+            </td>
+            <td>
+                {{ form.username}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                {{ form.password}}
+            </td>
+        </tr>
+
+        <tr align="center">
+            <td>
+                <button type="submit">Login</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<br>
+<br>
+<br>
+<br>
+{% include "Footer.html" %}
+</body>
+</html>

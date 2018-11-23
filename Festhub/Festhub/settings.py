@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'FesthubHome',
     'Registrationpage',
     'Loginhomepage',
+    'login',
+    'viewregevents',
 ]
 
 MIDDLEWARE = [

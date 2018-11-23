@@ -73,11 +73,12 @@
                         <div class="col-3 col-lg-9 flex justify-content-end align-content-center">
                             <nav class="site-navigation flex justify-content-end align-items-center">
                                 <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center grey">
-                                    <li class="current-menu-item"><a href="index.html"> Home</a></li>
-                                    <li class="current-menu-item"><a href="index.html">About</a></li>
+                                    <li class="current-menu-item"><a href="{% url 'FesthubHome:Homeurl' %}"> Home</a></li>
+                                    <li class="current-menu-item"><a href="{% url 'viewstuddetails:viewstudurl' %}">View student details</a></li>
+                                    <li class="current-menu-item"><a href="{% url 'viewcoorddetails:viewcoordurl' %}">View coordinator details</a></li>
                                     <li class="current-menu-item"><a href="{% url 'viewfestdetails:Festurl' %}">View Fest Details</a></li>
-                                    <li class="current-menu-item"><a href="{% url 'complaintreg:ComplaintregForm' %}">Register complaints</a></li>
-                                    <li class="current-menu-item"><a href="{% url 'feedback:FeedbackForm' %}">Register Feedback</a></li>
+                                    <li class="current-menu-item"><a href="{% url 'viewregevents:Regurl' %}">View Event Registration details</a></li>
+                                    <li class="current-menu-item"><a href="{% url 'viewcomplaint:Compurl' %}">View Complaints</a></li>
                                 </ul>
 
                                 <div class="hamburger-menu d-lg-none">

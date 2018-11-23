@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "viewfestdetails\Studheader.html" %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <meta charset="UTF-8">
+    <title>View</title>
+</head>
+<body>
+{% for obj in data %}
+ <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+     <tr><td>id</td><td>{{ obj.id }}</td></tr>
+     <tr>   <td>Event ID</td><td>{{ obj.fest_name }}</td></tr>
+     <tr>  <td>Event registration no</td><td>{{ obj.event_reg_no }}</td></tr>
+     <tr>
+         <td>
+         <!--<a href="{% url 'vieweventdetails:Eventurl'}">View events</a> -->
+         </td>
+     </tr>
+
+      </table>
+ <br>
+ <br>
+ <br>
+
+
+
+
+
+    {% endfor %}
+<br>
+<br>
+<br>
+{% include "Footer.html" %}
+</body>
+</html>

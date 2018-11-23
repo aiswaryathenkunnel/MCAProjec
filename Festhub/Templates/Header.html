@@ -34,11 +34,11 @@
                     <div class="row">
                         <div class="col-12 col-lg-6 d-none d-md-flex flex-wrap justify-content-center justify-content-lg-start mb-3 mb-lg-0">
                             <div class="header-bar-email d-flex align-items-center">
-                                <i class="fa fa-envelope"></i><a href="#">admin.design@gmail.com</a>
+                                <i class="fa fa-envelope"></i><a href="#">aiswaryatp1996@gmail.com</a>
                             </div><!-- .header-bar-email -->
 
                             <div class="header-bar-text lg-flex align-items-center">
-                                <p><i class="fa fa-phone"></i>0484-2-280675 </p>
+                                <p><i class="fa fa-phone"></i>+91 9539 346 182</p>
                             </div><!-- .header-bar-text -->
                         </div><!-- .col -->
 
@@ -52,8 +52,8 @@
 
                             <div class="header-bar-menu">
                                 <ul class="flex justify-content-center align-items-center py-2 pt-md-0">
-                                    <li><a href="#">Register</a></li>
-                                    <li><a href="#">Login</a></li>
+                                    <!--<li><a href="#">Register</a></li>
+                                    <li><a href="#">Login</a></li>-->
                                 </ul>
                             </div><!-- .header-bar-menu -->
                         </div><!-- .col -->
@@ -73,11 +73,9 @@
                         <div class="col-3 col-lg-9 flex justify-content-end align-content-center">
                             <nav class="site-navigation flex justify-content-end align-items-center">
                                 <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center grey">
-                                    <li class="current-menu-item"><a href="index.html"> Home</a></li>
-                                    <li class="current-menu-item"><a href="index.html">About</a></li>
-                                    <li class="current-menu-item"><a href="index.html">Courses</a></li>
-                                    <li class="current-menu-item"><a href="index.html">Gallery</a></li>
-                                    <li class="current-menu-item"><a href="index.html">Contact</a></li>
+                                    <li class="current-menu-item"><a href="{% url 'FesthubHome:Homeurl' %}"> Home</a></li>
+                                    <li class="current-menu-item"><a href="{% url 'FesthubHome:Homeurl' %}">About</a></li>
+                                    <li class="current-menu-item"><a href="{% url 'FesthubHome:Homeurl' %}">Contact</a></li>
                                 </ul>
 
                                 <div class="hamburger-menu d-lg-none">

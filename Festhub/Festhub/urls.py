@@ -37,5 +37,6 @@ urlpatterns = [
     url(r'^Registration/', include('Registrationpage.urls')),
     url(r'^Login/', include('Loginhomepage.urls')),
     url(r'^viewfeedback/', include('viewfeedback.urls')),
-
+    url(r'^adminlogin/', include('login.urls')),
+    url(r'^viewreg/', include('viewregevents.urls')),
 ]
